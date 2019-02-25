@@ -2,15 +2,21 @@ function Mostrar()
 {
 
 	var contador=0;
-	// declarar variables
-	
-	var respuesta='si';
+	var numero;
+	var maximo;
+	var minimo;
+	var respuesta='s';
 
-	while(respuesta!='no')
-	{
-		
+do{ 
 	
-	}
+
+} while(respuesta == "s");
+	
+
+document.getElementById('suma').value=positivo;
+
+document.getElementById('producto').value=negativo;
+
 
 
 
