@@ -11,11 +11,11 @@ function Mostrar()
 	var promediopos;
 	var promedioneg;
 	var diferencias;
-	var respuesta = "si";
+	var respuesta = "s";
 	var numero;
 	do
 	{
-		numero = parseInt(prompt("Ingrese el nombre"));
+		numero = parseInt(prompt("Ingrese el numero"));
 		if(numero >0)
 		{
 			acumuladorneg += numero;
@@ -37,20 +37,20 @@ function Mostrar()
 		}
 		respuesta=prompt("Desea continuar?");
 	
-	}while(respuesta = "si");
+	}while(respuesta == "s");
 
 promedioneg = acumuladorneg / contadorneg;
 promediopos = acumuladorpos / contadorpos;
 diferencias = promedioneg - promediopos;
 
-document.write("1-Suma de los negativos. " + 
-document.write("2-Suma de los positivos. "
-document.write("3-Cantidad de positivos. " 
-document.write("4-Cantidad de negativos. "
-document.write("5-Cantidad de ceros. "
-document.write("6-Cantidad de números pares. " 
-document.write("7-Promedio de positivos. "
-document.write(" 8-Promedios de negativos. " 
-document.write("9-Diferencia entre positivos y negativos, (positvos-negativos) "
+document.write("1-Suma de los negativos. " + acumuladorneg);
+document.write("2-Suma de los positivos. " +  acumuladorpos);  
+document.write("3-Cantidad de positivos. "  + contadorpos);
+document.write("4-Cantidad de negativos. " +  contadorneg);
+document.write("5-Cantidad de ceros. " + contadorcero);
+document.write("6-Cantidad de números pares. " + contadorpos);
+document.write("7-Promedio de positivos. " + promediopos);
+document.write(" 8-Promedios de negativos. " + promedioneg);
+document.write("9-Diferencia entre positivos y negativos, (positvos-negativos) " +  diferencias);
 
 }//FIN DE LA FUNCIÓN
