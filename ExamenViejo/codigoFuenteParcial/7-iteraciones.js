@@ -1,34 +1,38 @@
 //Debemos lograr mostrar un mensaje al presionar el botón  'MOSTRAR'.
 function Mostrar() {
-	{
-	var nota;
-    var sexo;
-    var ntoaBaja;
-    var contadorvarones= 0;
-    var acumuladornotas= 0;
-    var promedio;
-    var flag =0;
-
-
-    for( var i = 1 ; i <= 6; i++)
-    {
-
-    nota = parseInt(prompt("ingrese su nota  "));
-   
-    while((nota >= 0 || nota >= 10) || isNaN(nota))
-    {
-        nota = parseInt(prompt("error reingrese nota  " + i));
-         
-    }
-
-    sexo = prompt("ingrese su sexo");
-
-    while(sexo != "m" || sexo != "f" );
-    {
-        sexo = prompt("sexo incorrecto reingrese el dato")
-    }
-
-   
+	
+        var promedio;
+        var suma = 0;
+        var menor;
+        var alumno;
+        var sexoBajo;
+        var contVar = 0;
+        var flag = 0;
+        var nota;
+        var sexo;
+        for (i = 1; i <= 6; i++) {
+             nota = parseInt(prompt("Alumno " + i + "- Ingrese la nota:"));
+            while (isNaN(nota) || nota < 0 || nota > 10) {
+                nota = parseInt(prompt("Error: Nota invalida.\nAlumno " + i + "- Ingrese la nota:"));
+            }
+            sexo = prompt("Alumno " + i + "- Ingrese el sexo (f o m):");
+            while (!(isNaN(sexo)) || sexo != "f" && sexo != "m") {
+                sexo = prompt("Error: Sexo invalido.\nAlumno " + i + "- Ingrese el sexo (f o m):");
+            }
+            if (nota < menor || flag == 0) {
+                menor = nota;
+                alumno = i;
+                sexoBajo = sexo;
+                flag = 1;
+            }
+            if (nota >= 6 && sexo == "m") {
+                contVar++;
+            }
+            suma += nota;
+        }
+        promedio = suma / 6;
+       alert("a) Promedio de notas total: " + promedio.toFixed(2) + "\nb) La nota más baja fue un " + menor + " del Alumno" + alumno + " cuyo sexo es " + sexoBajo + "\nc) Cantidad de varones cuya nota ha sido mayor o igual a 6: " + contVar);
+    
 
 }
 

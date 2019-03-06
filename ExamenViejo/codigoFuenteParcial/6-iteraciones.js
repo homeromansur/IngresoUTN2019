@@ -32,3 +32,5 @@ function Mostrar()
   document.write("importe minimo $" + menor);
 }
 
+
+  
